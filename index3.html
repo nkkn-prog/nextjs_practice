@@ -1,0 +1,29 @@
+<html>
+  <body>
+    <div id="'app">
+      <p>Hello World!</p>
+    </div>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+    <!--babelはreact-domのReactDOM.render()メソッド使用時に用いるjsxを、JavaScriptにコンパイルするために必要 -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- 作成したHeaderコンポーネントをその親コンポーネントであるHomePageに入れることができる -->
+    <!-- HomePageコンポーネント内に入れたHeaderコンポーネント内に書いたパラメーターを、Headerコンポーネントに受け渡す事ができる。 また、受け渡すpropsは明示する事ができる。-->
+    <script type="text/babel">
+      const app = document.getElementById("app")
+      function Header(props){
+        return <h1>"First React"</h1>
+      }
+
+      function HomePage(){
+        return (
+          <div>
+            <Header title="React" />
+          </div>
+        )
+      }
+      ReactDOM.render(<Header />, app)
+    </script>
+  </body>
+</html>

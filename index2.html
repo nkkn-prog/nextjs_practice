@@ -1,0 +1,16 @@
+<html>
+  <body>
+    <div id="'app"></div>
+
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+    <!--babelはreact-domのReactDOM.render()メソッド使用時に用いるjsxを、JavaScriptにコンパイルするために必要 -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- vercelの公式では、type="text/jsx"と書かれていたが、正しくは"text/babel"-->
+    <script type="text/babel">
+      const app = document.getElementById("app");
+      ReactDOM.render(<h1>First React</h1>, app);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<html>
+  <body>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+      function HomePage(){
+        const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+        
+        {/* 配列0番目はvalue, 1番目はvalueを変更する関数が入る*/}
+        const[theFirstOneIsValue, theSecondOneIsFunctionToUpdateValue] = React.useState(0);
+        function handleClick(){
+          setLikes(likes + 1);
+        }
+
+        return (
+          <div>
+            <Header title="Develop. Preview. Ship. 🚀" />
+            <ul>
+              {names.map((name) => (
+                <li key={name}>{name}</li>
+              ))}
+            </ul>
+
+            <button onClick={handleClick}>Like</button>
+          </div>
+        );
+      }
+
+    </script>
+  </body>
+</html>
